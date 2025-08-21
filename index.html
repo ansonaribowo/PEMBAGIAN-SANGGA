@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pembagian Sangga Pramuka</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Pembagian Sangga Pramuka</h1>
+
+    <!-- Form Input -->
+    <div class="form-box">
+      <label>Nama Anggota:</label>
+      <input type="text" id="nama" required>
+
+      <label>Kelas:</label>
+      <input type="text" id="kelas" required>
+
+      <label>Sangga:</label>
+      <select id="sangga">
+        <option value="Elang">Elang</option>
+        <option value="Rajawali">Rajawali</option>
+        <option value="Banteng">Banteng</option>
+        <option value="Harimau">Harimau</option>
+        <option value="Kijang">Kijang</option>
+      </select>
+
+      <button onclick="tambahAnggota()">Tambah</button>
+    </div>
+
+    <!-- Tabel Anggota -->
+    <h2>Daftar Anggota</h2>
+    <table id="tabelAnggota">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Kelas</th>
+          <th>Sangga</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data akan masuk lewat JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
