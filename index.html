@@ -47,6 +47,35 @@
 </body>
 </html>
 
+<form id="myForm">
+  <input type="text" name="nama" placeholder="Nama" required><br>
+  <input type="email" name="email" placeholder="Email" required><br>
+  <textarea name="pesan" placeholder="Pesan" required></textarea><br>
+  <button type="submit">Kirim</button>
+</form>
+
+<p id="status"></p>
+
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbyVTLMbDKaW3cBeEyitolwskvzmvT3Ruij_b4VgB40R1N-YmOqO6gDNqvbeigKth-FeOQ/exec"; // ganti dengan URL dari Apps Script
+
+  document.getElementById("myForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+
+    fetch(scriptURL, {
+      method: "POST",
+      body: JSON.stringify(data)
+    })
+    .then(res => res.text())
+    .then(msg => document.getElementById("status").innerText = msg)
+    .catch(err => document.getElementById("status").innerText = "Gagal: " + err);
+  });
+</script>
+
+
+
 
 
 
